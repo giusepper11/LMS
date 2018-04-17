@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('cursos/', cursos, name='cursos'),
-    path('cursos/<str:url>', detadisc, name='deta_disc'),
+    path('cursos/<str:url>', detadisc, name='deta_disc',),
     path('novo_aluno/', novo_aluno, name='novo_aluno'),
     path('aprovados/', aprovados, name='aprovados'),
 
