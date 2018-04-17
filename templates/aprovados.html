@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+    Aprovados
+{% endblock %}
+{% block container %}
+
+    <form id="dadosAluno" onsubmit="valida()" action="#" method="post" class="form_class" >
+        <fieldset>
+            <legend>Lista de Alunos</legend>
+            <table  id="tblAluno">
+                <head>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Ra</th>
+                    </tr>
+                </head>
+            </table>
+            <input type="button" value='Enviar' onclick="return valida()">
+        </fieldset>
+    </form>
+{% endblock %}
+

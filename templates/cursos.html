@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Cursos
+{% endblock %}
+{% block container %}
+
+    <fieldset class="cursos">
+
+
+        <legend>Cursos</legend>
+        {% for curso in cursos %}
+            <figure>
+                <p><a href="{% url 'deta_disc' curso.url  %}">
+                    <img src="{% static curso.img %}" , alt="{{ curso.curso }}">
+                    <figcaption>{{ curso.curso }}</figcaption>
+                </a>
+                </p>
+            </figure>
+        {% endfor %}
+        {% comment %}
+            <figure>
+                <p><img src="{% static 'images/analise.jpg' %}", alt="Análise e Desenvolvimento de Sistemas">
+                    <figcaption>Análise e Desenvolvimento de Sistemas</figcaption>
+            </figure>
+            <figure>
+                <p><img src="{% static 'images/banco.jpg' %}" alt="Banco de Dados">
+                    <figcaption>Banco de Dados</figcaption>
+            </figure>
+            <figure>
+                <p><img src="{% static 'images/gestao.jpg' %}" alt="Gestão em Tecnologia da Informação">
+                    <figcaption>Gestão em Tecnologia da Informação</figcaption>
+            </figure>{% endcomment %}
+        <br><br>
+    </fieldset>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}
+    Cursos
+{% endblock %}
+{% block container %}
+    <div id="dropdown">
+        <ul>
+            {% for curso in cursos %}
+                {% if curso.url in request.path  %}
+                {% for disciplina in curso.disciplinas %}
+
+                    <li><a> {{ disciplina }}</a>
+                        <ul>
+                            <li>{{ curso.conteudo }}</li>
+                        </ul>
+                    </li>
+                    <br>
+                {% endfor %}
+                {% endif %}
+            {% endfor %}
+
+
+        </ul>
+    </div>
+{% endblock %}

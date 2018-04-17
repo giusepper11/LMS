@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}
+    Novo Aluno
+{% endblock %}
+{% block container %}
+
+    <h2> Formulário para adicionar um novo aluno </h2><br>
+    <div class="form">
+        <table id="novoaluno">
+            <form name="form1" action="" method="POST">
+                <fieldset>
+                    <legend><h2>Login</h2></legend>
+                    <div id="formulario">
+                        <div>
+                            <label for="login">Login:</label><br>
+                            <input type="text" name="login" maxlength="100" id="login"><br>
+                        </div>
+                        <div>
+                            <label for="nomecompleto">Nome Completo:</label><br>
+                            <input type="text" name="nomecompleto" maxlength="100" id="nomecompleto"><br>
+                        </div>
+                        <div>
+                            <label for="email">Email:</label><br>
+                            <input type="text" name="email" id="email" maxlength="60"><br>
+                        </div>
+
+                        <div>
+                            <label for="celular">Celular:</label><br>
+                            <input type="tel" name="celular" id="celular"><br>
+                        </div>
+
+                        <div>
+                            <label for="datanasc">Data de Nascimento:</label><br>
+                            <input type="date" name="datanasc" id="datanasc"><br>
+                        </div>
+
+                        <div>
+                            <label for="cpfnum">CPF:</label><br>
+                            <input type="text" name="cpfnum" id="cpfnum"
+                                   maxlength="11"><br>
+                        </div>
+
+
+                        <div>
+                            <label for="pass">Senha:</label><br>
+                            <input type="password" name="pass" id="pass"><br>
+                        </div>
+
+                        <div>
+                            <label for="passconf">Confirme sua senha:</label><br>
+                            <input class="teste" type="password" name="conf" id="passconf"><br>
+                        </div>
+
+                        <br/>
+                        <input type="button" value='Enviar' onclick="return validar()">
+                    </div>
+                </fieldset>
+            </form>
+        </table>
+    </div>
+{% endblock %}

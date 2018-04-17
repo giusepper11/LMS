@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Corte&Costura">
+    <meta name="description" content="Faculdade Impacta">
+    <link rel="shortcut icon" href="{% static 'images/icon-24188_960_720.png' %}" type="image/x-icon">
+
+    <title>{% block title %}Index{% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="{% static 'scripts/scripts.js' %}"></script>
+
+</head>
+
+<body>
+    <div class="image"></div>
+    ​
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="{% url 'index' %}">
+                    <h1><img src="{% static 'images/Logo_2.jpg' %}" class="logo_img"
+                             title="Faculdade Impacta de Tecnologia"
+                             alt="Faculdade Impacta de Tecnologia"></h1>
+                </a>
+            </div>
+
+            <ul class="navbar">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'cursos' %}">Cursos</a></li>
+{#                <li><a href="{% url 'novo_aluno' %}">Novo Aluno</a></li>#}
+{#                <li><a href="{% url 'aprovados' %}">Aprovados</a></li>#}
+                <li class="login"><a href="#about">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <main>
+        {% block container %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>11 3254-8300 - Impacta 2018 - Todos os Direitos Resevados</p>
+    </footer>
+</body>
+</html>
