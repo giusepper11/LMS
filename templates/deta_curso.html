@@ -14,7 +14,7 @@
                 {% if curso.url in request.path %}
                     {% for disciplina in curso.disciplinas %}
 
-                        <li><a> {{ disciplina }}</a>
+                        <li><a> {{ disciplina.nome }}</a>
                             <ul>
                                 <li>{{ curso.conteudo }}</li>
                             </ul>

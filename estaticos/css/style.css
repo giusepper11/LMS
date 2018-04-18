@@ -42,7 +42,6 @@ nav li a {
     text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
 nav li a:hover {
     background-color: #111;
 }
@@ -153,3 +152,9 @@ figure {
   padding: 0.5em;
   border-radius: 15px;
 }
+
+table, th , td {
+    border: 1px solid black;
+
+}
+
