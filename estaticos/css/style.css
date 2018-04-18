@@ -42,6 +42,14 @@ nav li a {
     text-decoration: none;
 }
 
+.link_disc:-webkit-any-link {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
 nav li a:hover {
     background-color: #111;
 }

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+
+    {% for disciplina in disciplinas %}
+        {% if disciplina.url == request.path %}
+            {{ disciplina.name }}
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}
+{% block container %}
+
+    {% for disciplina in disciplinas %}
+        {% if disciplina.url in request.path %}
+            {% if disciplina.curso in request.path %}
+                <section>
+                    <fieldset>
+                        <p>
+                        <h3><strong>{{ disciplina.nome }}</strong></h3>
+                        <ul>
+                            <li><strong>{{ disciplina.p1 }}</strong></li>
+                            <li>{{ disciplina.p2 }}</li>
+                            <li>{{ disciplina.p3 }}</li>
+                            <li>{{ disciplina.p4 }}</li>
+                        </ul>
+                        </p>
+                        <p>
+                        <table>
+                            <tr>
+                                <th>Regime de Aula</th> <!-- Parâmetro fixo/cabeçalho da tabela-->
+                                <th>Quantidade Mínima</th> <!-- Parâmetro fixo/cabeçalho da tabela-->
+                                <th>Quantidade Máxima</th> <!-- Parâmetro fixo/cabeçalho da tabela-->
+                            </tr>
+                            <tr>
+                                <td>{{ disciplina.regime }}</td>
+                                <td>{{ disciplina.minimo }}</td>
+                                <td>{{ disciplina.maximo }}</td>
+                            </tr>
+                        </table>
+                        </p>
+                    </fieldset>
+                </section>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+
+{% endblock %}

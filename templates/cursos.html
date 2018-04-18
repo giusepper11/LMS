@@ -11,7 +11,7 @@
         <legend>Cursos</legend>
         {% for curso in cursos %}
             <figure>
-                <p><a href="{% url 'deta_disc' curso.url  %}">
+                <p><a href="{% url 'deta_curso' curso.url  %}">
                     <img src="{% static curso.img %}" , alt="{{ curso.curso }}">
                     <figcaption>{{ curso.curso }}</figcaption>
                 </a>

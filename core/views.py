@@ -12,18 +12,21 @@ def cursos(request):
         'cursos': [
             {
                 'curso': 'Analise e desenvolvimento de sistemas',
+                'root':'cursos',
                 'url': 'disc_ads',
                 'img': 'images/analise.jpg'
             },
 
             {
                 'curso': 'Banco de Dados',
+                'root': 'cursos',
                 'url': 'disc_bd',
                 'img': 'images/banco.jpg'
             },
             #
             {
                 'curso': 'Gestão em Tecnologia da Informação',
+                'root': 'cursos',
                 'url': 'disc_gti',
                 'img': 'images/gestao.jpg'
             },
@@ -52,6 +55,7 @@ def detacurso(request,url):
             {
                 'curso': 'Analise e desenvolvimento de sistemas',
                 'url': 'disc_ads',
+                'root': 'cursos',
                 'disciplinas': [{'nome': 'Tec web',
                                  'url': 'tec_web'},
 
@@ -73,6 +77,7 @@ def detacurso(request,url):
             {
                 'curso': 'Banco de Dados',
                 'url': 'disc_bd',
+                'root': 'cursos',
                 'disciplinas': [{'nome': 'BD1',
                                  'url': 'bd1'},
 
@@ -92,6 +97,7 @@ def detacurso(request,url):
             {
                 'curso': 'Gestão em Tecnologia da Informação',
                 'url': 'disc_gti',
+                'root': 'cursos',
                 'disciplinas': [{'nome': 'GTI1',
                                  'url': 'gti1'},
 
@@ -115,24 +121,27 @@ def detacurso(request,url):
 
     return render(request, 'deta_curso.html', context)
 
-def deta_disc(request, url):
+
+def deta_disc(request,root, url):
     lorem = '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac enim dapibus'
     context = {
 
         'disciplinas': [
 
             {'nome': 'Tec web',
+             'curso':'disc_ads',
              'url': 'tec_web',
-             'p1':lorem,
-             'p2':lorem,
-             'p3':lorem,
-             'p4':lorem,
-             'p5':lorem,
-             'regime':'3:40 hora/aula',
-             'minimo':'15 aulas',
-             'maximo':'20 aulas'},
+             'p1': lorem,
+             'p2': lorem,
+             'p3': lorem,
+             'p4': lorem,
+             'p5': lorem,
+             'regime': '3:40 hora/aula',
+             'minimo': '15 aulas',
+             'maximo': '20 aulas'},
 
             {'nome': 'Eng Soft',
+             'curso': 'disc_ads',
              'url': 'eng_soft',
              'p1': lorem,
              'p2': lorem,
@@ -145,6 +154,7 @@ def deta_disc(request, url):
              },
 
             {'nome': 'Banco de Dados',
+             'curso': 'disc_ads',
              'url': 'bd',
              'p1': lorem,
              'p2': lorem,
@@ -157,6 +167,7 @@ def deta_disc(request, url):
              },
 
             {'nome': 'Dev Ops',
+             'curso': 'disc_ads',
              'url': 'dev_ops',
              'p1': lorem,
              'p2': lorem,
@@ -169,6 +180,7 @@ def deta_disc(request, url):
              },
 
             {'nome': 'LP II',
+             'curso': 'disc_ads',
              'url': 'lp_2',
              'p1': lorem,
              'p2': lorem,
@@ -181,6 +193,7 @@ def deta_disc(request, url):
              },
 
             {'nome': 'BD1',
+             'curso': 'disc_bd',
              'url': 'bd1',
              'p1': lorem,
              'p2': lorem,
@@ -193,6 +206,7 @@ def deta_disc(request, url):
              },
 
             {'nome': 'BD2',
+             'curso': 'disc_bd',
              'url': 'bd2',
              'p1': lorem,
              'p2': lorem,
@@ -205,6 +219,7 @@ def deta_disc(request, url):
              },
 
             {'nome': 'BD3',
+             'curso': 'disc_bd',
              'url': 'bd3',
              'p1': lorem,
              'p2': lorem,
@@ -217,6 +232,7 @@ def deta_disc(request, url):
              },
 
             {'nome': 'BD4',
+             'curso': 'disc_bd',
              'url': 'bd4',
              'p1': lorem,
              'p2': lorem,
@@ -229,6 +245,7 @@ def deta_disc(request, url):
              },
 
             {'nome': 'BD5',
+             'curso': 'disc_bd',
              'url': 'bd5',
              'p1': lorem,
              'p2': lorem,
@@ -241,6 +258,7 @@ def deta_disc(request, url):
              },
 
             {'nome': 'GTI1',
+             'curso': 'disc_gti',
              'url': 'gti1',
              'p1': lorem,
              'p2': lorem,
@@ -253,6 +271,7 @@ def deta_disc(request, url):
              },
 
             {'nome': 'GTI2',
+             'curso': 'disc_gti',
              'url': 'gti2',
              'p1': lorem,
              'p2': lorem,
@@ -265,6 +284,7 @@ def deta_disc(request, url):
              },
 
             {'nome': 'GTI3',
+             'curso': 'disc_gti',
              'url': 'gti3',
              'p1': lorem,
              'p2': lorem,
@@ -277,6 +297,7 @@ def deta_disc(request, url):
              },
 
             {'nome': 'GTI4',
+             'curso': 'disc_gti',
              'url': 'gti4',
              'p1': lorem,
              'p2': lorem,
@@ -289,6 +310,7 @@ def deta_disc(request, url):
              },
 
             {'nome': 'GTI5',
+             'curso': 'disc_gti',
              'url': 'gti5',
              'p1': lorem,
              'p2': lorem,
@@ -302,7 +324,8 @@ def deta_disc(request, url):
         ]
 
     }
-    return render(request, 'deta_disc.html')
+    return render(request, 'deta_disc.html', context)
+
 
 def novo_aluno(request):
     return render(request, 'novoAluno.html')

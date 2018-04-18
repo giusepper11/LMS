@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}
     {% for curso in cursos %}
         {% if curso.url in request.path %}
@@ -14,12 +15,14 @@
                 {% if curso.url in request.path %}
                     {% for disciplina in curso.disciplinas %}
 
-                        <li><a> {{ disciplina.nome }}</a>
+
+                        <li><a href="{% url 'deta_disc' curso.url disciplina.url  %}" class="link_disc" > {{ disciplina.nome }}</a>
                             <ul>
                                 <li>{{ curso.conteudo }}</li>
                             </ul>
                         </li>
                         <br>
+
                     {% endfor %}
                 {% endif %}
             {% endfor %}
